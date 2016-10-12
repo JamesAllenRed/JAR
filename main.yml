@@ -1,0 +1,11 @@
+---
+- name: Master YAML file to orchestrate full stack deployment
+  hosts: localhost
+  connection: local
+  gather_facts: False
+
+  vars_files:
+  - group_vars/all
+
+  tasks:
+
