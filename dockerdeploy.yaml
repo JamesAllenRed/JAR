@@ -1,4 +1,4 @@
---- Deployment and configuration of docker master
+---
 - name: Master YAML file to orchestrate full stack deployment
   hosts: localhost
   connection: local
@@ -9,13 +9,13 @@
 
   tasks:
   - name: Configure docker repo
-    - copy: src=/roles/Docker-Master-Deploy/files/docker.repo dest=/etc/yum.repos.d/ owner=root group=root mode=644 backup=yes
+      copy: src=/roles/Docker-Master-Deploy/files/docker.repo dest=/etc/yum.repos.d/ owner=root group=root mode=644 backup=yes
 
   - name: Install the engine
-    - command: yum install docker-engine
+      command: yum install docker-engine
 
   - name: Configure the docker service
-    - command: systemctl enable docker.service
+      command: systemctl enable docker.service
 
   - name: Start the docker deamon
-    - command: systemctl start docker
+      command: systemctl start docker
