@@ -9,13 +9,13 @@
 
   tasks:
   - name: Deploy Docker
-      copy: src=/roles/Docker-Master-Deploy/files/docker.repo dest=/etc/yum.repos.d/
+    copy: src=/roles/Docker-Master-Deploy/files/docker.repo dest=/etc/yum.repos.d/
 
   - name: Install the engine
-      command: yum install docker-engine
+    command: yum install docker-engine
 
   - name: Configure the docker service
-      command: systemctl enable docker.service
+    command: systemctl enable docker.service
 
   - name: Start the docker deamon
-      command: systemctl start docker
+    command: systemctl start docker
