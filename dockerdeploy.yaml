@@ -8,8 +8,8 @@
   - group_vars/all
 
   tasks:
-  - name: Configure docker repo
-      copy: src=/roles/Docker-Master-Deploy/files/docker.repo dest=/etc/yum.repos.d/ owner=root group=root mode=644 backup=yes
+  - name: Deploy Docker
+      copy: src=/roles/Docker-Master-Deploy/files/docker.repo dest=/etc/yum.repos.d/
 
   - name: Install the engine
       command: yum install docker-engine
