@@ -9,7 +9,7 @@
 
   tasks:
   - name: Deploy Docker
-    copy: src=/tmp/docker.repo dest=/etc/yum.repos.d/
+    fetch: src=/tmp/docker.repo dest=/etc/yum.repos.d/
 
   - name: Install the engine
     command: yum install docker-engine
